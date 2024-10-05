@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Regression{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* เมนูบาร์ด้านซ้าย */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0047ab;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #003377;
+        }
+
+        /* ส่วนคอนเทนต์ */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #0047ab;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #0047ab;
+        }
+
+        form input[type="submit"] {
+            background-color: #0047ab;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #003377;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #0047ab;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- เมนูบาร์ด้านซ้าย -->
+    <div class="sidebar">
+        <h2>Advertising Prediction</h2>
+        <a href="{% url 'poly_index' %}">Polynomial Regression</a>
+        <a href="{% url 'multi_index' %}">Multiple Regression</a>
+    </div>
+
+    <!-- ส่วนคอนเทนต์ -->
+    <div class="content">
+        <div class="container">
+            <h1>{% block header %}Regression Prediction{% endblock %}</h1>
+            
+            <!-- เนื้อหาที่แตกต่างของแต่ละหน้า -->
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
