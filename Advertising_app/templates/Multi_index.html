@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Multiple Regression{% endblock %}
+{% block title %}Multiple Linear Regression Model{% endblock %}
 
-{% block header %}Multiple Regression Model{% endblock %}
+{% block header %}Multiple Linear Regression Model{% endblock %}
 
 {% block content %}
-    <form method="post">
+    <form method="post" >
         {% csrf_token %}
         <input type="text" name="Tv" placeholder="TV Budget"> <br><br>
         <input type="text" name="Radio" placeholder="Radio Budget"> <br><br>

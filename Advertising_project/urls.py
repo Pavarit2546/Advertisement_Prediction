@@ -20,8 +20,8 @@ from Advertising_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='home'),
-    path('poly/', views.Polynomial, name='poly_index'),  # หน้า Poly_index
+    path('', views.Polynomial, name='poly_index'),
+    #path('poly/', views.Polynomial, name='poly_index'),  # หน้า Poly_index
     path('multi/', views.Multiple_Linear, name='multi_index'),  # หน้า Muti_index
 ]
 
