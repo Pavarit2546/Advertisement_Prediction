@@ -41,8 +41,9 @@ def Polynomial(request):
             prediction = model_poly.predict(df_trans)
             #test_df.to_csv('Test_data.csv', index=False)
             train_df.to_csv('Train_data.csv', index=False)
+            print(type(prediction[0]))
             context = {
-                'result': f"Predicted sales: {prediction[0]:.2f} thousands"
+                'result': f"Predicted sales: {prediction[0]*1000:,.2f} $"
             }
             return render(request, "Poly_index.html", context)
         
@@ -72,7 +73,7 @@ def Multiple_Linear(request):
             prediction = model_muti.predict(df_input)
 
             context = {
-                'result': f"Predicted sales: {prediction[0]:.2f} thousands"
+                'result': f"Predicted sales: {prediction[0]*1000:,.2f} $"
             }
             return render(request, "Multi_index.html", context)
         

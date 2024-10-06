@@ -5,18 +5,20 @@
 {% block header %}Multiple Linear Regression Model{% endblock %}
 
 {% block content %}
-    <form method="post" >
+    <h5>1 unit = 1,000 $</h5>
+    <form method="post">
         {% csrf_token %}
-        <input type="text" name="Tv" placeholder="TV Budget"> <br><br>
-        <input type="text" name="Radio" placeholder="Radio Budget"> <br><br>
-        <input type="text" name="Newspaper" placeholder="Newspaper Budget"> <br><br>
+        <input type="text" name="Tv" placeholder="TV Budget">
+        <input type="text" name="Radio" placeholder="Radio Budget">
+        <input type="text" name="Newspaper" placeholder="Newspaper Budget">
         <input type="submit" value="Predict">
     </form>
 
     {% if result %}
         <div class="result">
-            <h2>Result: {{ result }}</h2>
+            <h2>{{ result }}</h2>
         </div>
     {% endif %}
 {% endblock %}
+
 
